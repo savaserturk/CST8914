@@ -24,6 +24,15 @@ div[role="main"], main {
 	counter-reset: olc;
 }
 
+.counter li {
+    counter-increment: list-counter; /* Increment counter for each li */
+  }
+
+  .counter li::before {
+    content: counter(list-counter) ". "; /* Add the counter number before each item */
+    font-weight: bold; /* Optional: make it bold for emphasis */
+  }
+
 div[role="listitem"]:is(div[aria-setsize]):before {
 	counter-increment: olc;
 	content: counter(olc) ". ";
